@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/logo"
+        android:textSize="20sp"
+        android:layout_toRightOf="@+id/logo"
+        android:layout_marginTop="35dp"
+        android:textColor="#7147FF"
+        android:text="Exchange App" />
+
+
+
+    <TextView
+        android:id="@+id/convertInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="1dp"
+        android:text="FROM"
+        android:textColor="#ffffff" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="5dp"
+        android:background="#ffffff"
+        android:layout_below="@+id/convertInformation"/>
+
+
+    <in.goodiebag.carouselpicker.CarouselPicker
+        android:id="@+id/carouseFrom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/convertInformation"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="#808080"
+        app:items_visible="five">
+
+    </in.goodiebag.carouselpicker.CarouselPicker>
+
+    <TextView
+        android:id="@+id/convertText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/carouseFrom"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:text="AMOUNT"
+        android:textColor="#ffffff" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="5dp"
+        android:background="#ffffff"
+        android:layout_below="@+id/convertText"/>
+
+    <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+        android:id="@+id/amountTextBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/convertText"
+        android:layout_marginRight="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="13dp"
+        app:maxCharacters="10"
+        app:minCharacters="1"
+        app:labelText="Amount"
+        >
+
+        <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+            android:id="@+id/amountText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:gravity="center"
+            />
+
+    </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+
+
+    <TextView
+        android:id="@+id/convertToText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/amountTextBox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="1dp"
+        android:text="TO"
+        android:textColor="#ffffff" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="5dp"
+        android:background="#ffffff"
+        android:layout_below="@+id/convertToText"/>
+
+    <in.goodiebag.carouselpicker.CarouselPicker
+        android:id="@+id/carouseTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/amountTextBox"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="20dp"
+        android:background="#808080"
+        app:items_visible="five">
+
+    </in.goodiebag.carouselpicker.CarouselPicker>
+
+
+    <com.github.nikartm.button.FitButton
+        android:id="@+id/convertButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/carouseTo"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        app:fb_backgroundColor="#4CAF50"
+        app:fb_cornerRadius="24dp"
+        app:fb_rippleColor="#DCEDC8"
+        app:fb_shape="rectangle"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
+        app:fb_text="Convert Now!"
+        app:fb_textColor="#F5F5F5"
+        app:fb_textSize="22dp" />
+
+    <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/convertButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1dp"
+        android:padding="20dp"
+        android:visibility="invisible"
+        android:indeterminate="true"
+        app:mpb_progressStyle="horizontal"
+        style="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal" />
+
+
+    <com.hanks.htextview.line.LineTextView
+        android:id="@+id/convertedAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/convertButton"
+        android:layout_marginTop="1dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text=""
+        android:textSize="24sp"
+        android:visibility="invisible"
+        android:padding="20dp"
+        app:animationDuration="2000"
+        app:lineColor="#ffffff"
+        app:lineWidth="4dp"
+        />
+
+</RelativeLayout>
